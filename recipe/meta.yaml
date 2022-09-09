@@ -33,7 +33,6 @@ requirements:
     - python >=3.6
     - requests
     - setuptools
-    - six
     - twine >=1.6.0
 
 test:
