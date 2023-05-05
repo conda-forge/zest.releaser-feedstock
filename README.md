@@ -1,11 +1,11 @@
-About zest.releaser
-===================
+About zest.releaser-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zest.releaser-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/zestsoftware/zest.releaser
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zest.releaser-feedstock/blob/main/LICENSE.txt)
 
 Summary: Software releasing made easy and repeatable
 
