@@ -1,5 +1,5 @@
 {% set name = "zest.releaser" %}
-{% set version = "7.3.0" %}
+{% set version = "8.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zest.releaser-{{ version }}.tar.gz
-  sha256: 76ea1e569c21657f025bbc7a8157db78e165b4efc349f0cd0db9fac143292d11
+  sha256: 9b6495d02e594b318862f35cec84c596bf3fe37842db0009c39201f2ebcef809
 
 build:
   entry_points:
