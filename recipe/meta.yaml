@@ -27,12 +27,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - colorama
-    - python >=3.6
+    - python >=3.7
     - requests
     - setuptools
+    - tomli
     - twine >=1.6.0
 
 test:
