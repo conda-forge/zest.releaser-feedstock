@@ -52,7 +52,8 @@ test:
     - fullrelease --help
     - longtest --help
     - git init
-    # - lasttagdiff --help
+    - git commit --allow-empty -m "Empty-Commit"
+    - lasttagdiff --help
     - lasttaglog --help
     - addchangelogentry --help
     - bumpversion --help
