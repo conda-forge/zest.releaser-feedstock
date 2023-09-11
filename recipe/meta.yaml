@@ -52,6 +52,8 @@ test:
     - fullrelease --help
     - longtest --help
     - git init
+    - git config --global user.email "you@example.com"
+    - git config --global user.name "Your Name"
     - git commit --allow-empty -m "Empty-Commit"
     - lasttagdiff --help
     - lasttaglog --help
