@@ -27,14 +27,19 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python >=3.8
   run:
     - colorama
-    - python >=3.7
+    - python >=3.8
+    - python-build >=0.6.0.post1
+    - readme_renderer >=40
     - requests
-    - setuptools
+    - setuptools >=61.0.0
     - tomli
     - twine >=1.6.0
+
+    # From readme_renderer[md]
+    - cmarkgfm >=0.8.0
 
 test:
   imports:
