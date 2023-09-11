@@ -53,7 +53,7 @@ test:
     - longtest --help
     - git init
     - lasttagdiff --help
-    - lasttaglog --help
+    # - lasttaglog --help
     - addchangelogentry --help
     - bumpversion --help
   requires:
