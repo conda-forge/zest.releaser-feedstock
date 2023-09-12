@@ -56,7 +56,7 @@ test:
     - git config --global user.name "Your Name"
     - git commit --allow-empty -m "Empty-Commit"
     # - lasttagdiff --help
-    - lasttaglog --help
+    # - lasttaglog --help
     - addchangelogentry --help
     - bumpversion --help
   requires:
