@@ -1,5 +1,5 @@
 {% set name = "zest.releaser" %}
-{% set version = "8.0.0" %}
+{% set version = "9.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zest.releaser-{{ version }}.tar.gz
-  sha256: 9b6495d02e594b318862f35cec84c596bf3fe37842db0009c39201f2ebcef809
+  sha256: 8159d6f065441d236587eb2c4c1d6bdb93a843f980327c668e5cb0cdb9881290
 
 build:
   entry_points:
@@ -27,14 +27,19 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python >=3.8
   run:
     - colorama
-    - python >=3.7
+    - python >=3.8
+    - python-build >=0.6.0.post1
+    - readme_renderer >=40
     - requests
-    - setuptools
+    - setuptools >=61.0.0
     - tomli
     - twine >=1.6.0
+
+    # From readme_renderer[md]
+    - cmarkgfm >=0.8.0
 
 test:
   imports:
@@ -47,8 +52,11 @@ test:
     - fullrelease --help
     - longtest --help
     - git init
-    - lasttagdiff --help
-    - lasttaglog --help
+    - git config --global user.email "you@example.com"
+    - git config --global user.name "Your Name"
+    - git commit --allow-empty -m "Empty-Commit"
+    # - lasttagdiff --help
+    # - lasttaglog --help
     - addchangelogentry --help
     - bumpversion --help
   requires:
