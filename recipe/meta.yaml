@@ -28,6 +28,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - colorama
     - python >={{ python_min }}
