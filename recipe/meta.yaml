@@ -1,13 +1,13 @@
 {% set name = "zest.releaser" %}
-{% set version = "9.2.0" %}
+{% set version = "9.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zest.releaser-{{ version }}.tar.gz
-  sha256: f6cdbb15a125838144135176182e42d5b04eaae467df9d7b1e77ac24dd4d6266
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zest_releaser-{{ version }}.tar.gz
+  sha256: 42965da91c6776fdca9bc578fbaf9e3f496f58dd51fc3d319993c01f12f08b0f
 
 build:
   entry_points:
@@ -22,7 +22,7 @@ build:
     - bumpversion = zest.releaser.bumpversion:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
