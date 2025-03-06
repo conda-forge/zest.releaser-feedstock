@@ -10,16 +10,16 @@ source:
   sha256: 42965da91c6776fdca9bc578fbaf9e3f496f58dd51fc3d319993c01f12f08b0f
 
 build:
-  entry_points:
-    - release = zest.releaser.release:main
-    - prerelease = zest.releaser.prerelease:main
-    - postrelease = zest.releaser.postrelease:main
-    - fullrelease = zest.releaser.fullrelease:main
-    - longtest = zest.releaser.longtest:main
-    - lasttagdiff = zest.releaser.lasttagdiff:main
-    - lasttaglog = zest.releaser.lasttaglog:main
-    - addchangelogentry = zest.releaser.addchangelogentry:main
-    - bumpversion = zest.releaser.bumpversion:main
+  # entry_points:
+  #   - release = zest.releaser.release:main
+  #   - prerelease = zest.releaser.prerelease:main
+  #   - postrelease = zest.releaser.postrelease:main
+  #   - fullrelease = zest.releaser.fullrelease:main
+  #   - longtest = zest.releaser.longtest:main
+  #   - lasttagdiff = zest.releaser.lasttagdiff:main
+  #   - lasttaglog = zest.releaser.lasttaglog:main
+  #   - addchangelogentry = zest.releaser.addchangelogentry:main
+  #   - bumpversion = zest.releaser.bumpversion:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -43,20 +43,20 @@ requirements:
     - cmarkgfm >=0.8.0
 
 test:
-  imports:
-    - zest
-    - zest.releaser
+  # imports:
+  #   - zest
+  #   - zest.releaser
   commands:
     - pip check
-    # - release --help
-    # - prerelease --help
-    # - postrelease --help
-    # - fullrelease --help
-    # - longtest --help
     - git init
     - git config --global user.email "you@example.com"
     - git config --global user.name "Your Name"
     - git commit --allow-empty -m "Empty-Commit"
+    - release --help
+    # - prerelease --help
+    # - postrelease --help
+    # - fullrelease --help
+    # - longtest --help
     # - lasttagdiff --help
     # - lasttaglog --help
     # - addchangelogentry --help
