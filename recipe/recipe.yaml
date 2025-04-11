@@ -1,0 +1,81 @@
+schema_version: 1
+
+context:
+  name: zest.releaser
+  version: 9.6.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/zest_releaser-${{ version }}.tar.gz
+  sha256: 53de5e5916ad8cc05f44712fdd86310e5a86e941785642ba6242b6c3633d1d3b
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - release = zest.releaser.release:main
+      - prerelease = zest.releaser.prerelease:main
+      - postrelease = zest.releaser.postrelease:main
+      - fullrelease = zest.releaser.fullrelease:main
+      - longtest = zest.releaser.longtest:main
+      - lasttagdiff = zest.releaser.lasttagdiff:main
+      - lasttaglog = zest.releaser.lasttaglog:main
+      - addchangelogentry = zest.releaser.addchangelogentry:main
+      - bumpversion = zest.releaser.bumpversion:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - colorama
+    - python >=${{ python_min }}
+    - python-build >=1.0.0
+    - readme_renderer >=40
+    - requests
+    - setuptools >=61.0.0
+    - tomli
+    - twine >=1.6.0
+    # From readme_renderer[md]
+    - cmarkgfm >=0.8.0
+
+tests:
+  - python:
+      imports:
+        - zest
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - git
+        - python ${{ python_min }}
+    script:
+      - release --help
+      - prerelease --help
+      - postrelease --help
+      - fullrelease --help
+      - longtest --help
+      - git init
+      - "git config --global user.email \"you@example.com\""
+      - "git config --global user.name \"Your Name\""
+      - "git commit --allow-empty -m \"Empty-Commit\""
+      - addchangelogentry --help
+      - bumpversion --help
+
+about:
+  summary: Software releasing made easy and repeatable
+  license: GPL-2.0-only
+  license_file:
+    - LICENSE.GPL
+  homepage: https://github.com/zestsoftware/zest.releaser
+  documentation: https://zestreleaser.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - thewchan
