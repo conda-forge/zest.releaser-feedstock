@@ -9,7 +9,7 @@ Package license: GPL-2.0-only
 
 Summary: Software releasing made easy and repeatable
 
-Documentation: https://zestreleaser.readthedocs.io
+Documentation: https://zestreleaser.readthedocs.io/
 
 Current build status
 ====================
