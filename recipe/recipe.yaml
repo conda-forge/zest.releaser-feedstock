@@ -13,7 +13,7 @@ source:
   sha256: b13aa5f474a3f5a83ea0f1d168277ddefd0d8c8374f844490a7ce5436f072492
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -50,11 +50,11 @@ tests:
       imports:
         - zest
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version: ${{ python_min }}.*
   - requirements:
       run:
         - git
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
     script:
       - release --help
       - prerelease --help
