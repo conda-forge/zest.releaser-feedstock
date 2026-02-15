@@ -32,16 +32,19 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools
+    - setuptools >=61.0.0
+    - wheel
   run:
-    - colorama
     - python >=${{ python_min }}
-    - python-build >=1.0.0
+    - python-build >=1.2.0
+    - colorama
+    - packaging
     - readme_renderer >=40
     - requests
     - setuptools >=61.0.0
     - tomli
     - twine >=1.6.0
+    - wheel
     # From readme_renderer[md]
     - cmarkgfm >=0.8.0
 
