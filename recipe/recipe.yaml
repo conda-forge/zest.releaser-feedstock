@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: zest.releaser
-  version: "9.9.0"
+  version: "9.9.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/zest_releaser-${{ version }}.tar.gz
-  sha256: c1d696f73f6d6c5ca804ff141273a8b8ef5d76a483c85f682282bcb75da31683
+  sha256: 803282b081a6fe3d6dd6afb43db09477b3e3a86aa44a9e838481f3bb2b513034
 
 build:
   number: 0
