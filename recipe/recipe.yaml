@@ -32,7 +32,7 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools >=61.0.0
+    - setuptools >=77
     - wheel
   run:
     - python >=${{ python_min }}
@@ -53,7 +53,9 @@ tests:
       imports:
         - zest
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - git
